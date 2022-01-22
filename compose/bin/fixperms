@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Fixing filesystem permissions..."
+
+if [ -z "$1" ]; then
+  bin/clinotty find var vendor public \( -type f -or -type d \) -exec chmod u+w {} +;
+  bin/clinotty chmod u+x bin/console
+else
+  bin/clinotty find "$1" \( -type f -or -type d \) -exec chmod u+w {} +;
+fi
+
+echo "Filesystem permissions fixed."

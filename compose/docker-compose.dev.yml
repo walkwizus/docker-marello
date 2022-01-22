@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  app:
+    volumes: &appvolumes
+      - ./src/config:/var/www/html/config:cached
+      - ./src/patches:/var/www/html/patches:cached
+      - ./src/src:/var/www/html/src:cached
+      - ./src/composer.json:/var/www/html/composer.json:cached
+      - ./src/composer.lock:/var/www/html/composer.lock:cached
+
+  phpfpm:
+    volumes: *appvolumes
