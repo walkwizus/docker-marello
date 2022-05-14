@@ -1,4 +1,4 @@
-FROM php:8.0.0-fpm-buster
+FROM php:7.4-fpm-buster
 MAINTAINER Jimmy Carricart <jimmy@walkwizus.fr>
 
 ARG APP_ID=1000
@@ -55,7 +55,7 @@ RUN docker-php-ext-install -j$(nproc) \
     ldap \
     sockets
 
-RUN pecl install redis && docker-php-ext-enable redis
+RUN pecl install redis-4.2.0 && docker-php-ext-enable redis
 
 RUN groupadd -g "$APP_ID" app && useradd -g "$APP_ID" -u "$APP_ID" -d /var/www -s /bin/bash app
 

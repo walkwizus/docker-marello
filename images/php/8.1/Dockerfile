@@ -1,4 +1,4 @@
-FROM php:8.0.0-fpm-buster
+FROM php:8.1.3RC1-fpm-buster
 MAINTAINER Jimmy Carricart <jimmy@walkwizus.fr>
 
 ARG APP_ID=1000
