@@ -1,0 +1,1 @@
+curl -s https://raw.githubusercontent.com/walkwizus/docker-marello/master/lib/template | bash
