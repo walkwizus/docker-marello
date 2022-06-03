@@ -22,7 +22,7 @@ services:
       - "rabbitmq:172.17.0.1"
 
   phpfpm:
-    image: walkwizus/marello-php:8.0.0
+    image: walkwizus/marello-php:8.1-fpm
     volumes: *appvolumes
     extra_hosts: *appextrahosts
     env_file: env/phpfpm.env
