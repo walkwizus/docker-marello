@@ -7,7 +7,7 @@ else
 fi
 
 if [ "$1" == "--no-dev" ]; then
-  ${DOCKER_COMPOSE} -f compose.yaml -f compose.healthcheck.yaml "${@:2}"
+  ${DOCKER_COMPOSE} -f compose.yaml "${@:2}"
 else
-  ${DOCKER_COMPOSE} -f compose.yaml -f compose.healthcheck.yaml -f compose.dev.yaml "$@"
+  ${DOCKER_COMPOSE} -f compose.yaml -f compose.dev.yaml "$@"
 fi
