@@ -1,4 +1,4 @@
-FROM php:8.1.3RC1-fpm-buster
+FROM php:8.1-fpm-bullseye
 MAINTAINER Jimmy Carricart <jimmy@walkwizus.fr>
 
 ARG APP_ID=1000
@@ -59,10 +59,9 @@ RUN pecl install redis && docker-php-ext-enable redis
 
 RUN groupadd -g "$APP_ID" app && useradd -g "$APP_ID" -u "$APP_ID" -d /var/www -s /bin/bash app
 
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get update && apt-get install -y nodejs
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && apt-get update && apt-get install -y nodejs
 
-RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer --version=1.10.22
-RUN composer global require hirak/prestissimo
+RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer
 
 COPY conf/msmtprc /etc/msmtprc
 COPY conf/www.conf /usr/local/etc/php-fpm.d/
