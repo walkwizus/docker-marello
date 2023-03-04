@@ -71,7 +71,8 @@ bin/composer install
 ```bash
 bin/copyfromcontainer composer.lock
 bin/restart
-bin/console oro:install --env prod
+bin/console oro:install
+bin/console oro:assets:install
 
 # Setup SSL cert
 bin/setup-ssl www.marello.local
