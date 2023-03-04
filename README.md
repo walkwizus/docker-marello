@@ -69,6 +69,7 @@ bin/composer install
 ### Finish installation
 
 ```bash
+bin/copyfromcontainer composer.lock
 bin/restart
 bin/console oro:install --env prod
 
