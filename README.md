@@ -1,7 +1,7 @@
 
 # <p align="center">walkwizus/docker-marello</p>
 
-Docker environment for Marello Application
+Docker environment for Marello Application inspired by the awesome [Mark Shust's Docker for Magento](https://github.com/markshust/docker-magento)
 
 ## 🛠️ Setup Project
 
@@ -11,7 +11,7 @@ cd $_
 curl -s https://raw.githubusercontent.com/walkwizus/docker-marello/master/lib/template | bash
 
 # Clone Marello repository
-git clone git clone https://github.com/marellocommerce/marello-application.git src
+git clone https://github.com/marellocommerce/marello-application.git src
 
 # Marello EE
 # git clone https://github.com/marellocommerce/marello-application-ee.git
@@ -69,7 +69,6 @@ bin/composer install
 ### Finish installation
 
 ```bash
-bin/copyfromcontainer config
 bin/restart
 bin/console oro:install --env prod
 
