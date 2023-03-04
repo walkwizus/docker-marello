@@ -29,8 +29,6 @@ services:
 
   db:
     image: mariadb:10.4
-    # Uncommant to use Mac M1
-    #image: arm64v8/mysql:oracle
     command: --max_allowed_packet=64M
     ports:
       - "3306:3306"
@@ -58,7 +56,7 @@ services:
     extra_hosts: *appextrahosts
 
   rabbitmq:
-    image: rabbitmq:3.8.22-management-alpine
+    image: rabbitmq:3.9.28-management-alpine
     ports:
       - "15672:15672"
       - "5672:5672"
