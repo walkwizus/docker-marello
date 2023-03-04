@@ -1,0 +1,4 @@
+#!/bin/bash
+bin/stopall
+bin/remove
+bin/removevolumes
